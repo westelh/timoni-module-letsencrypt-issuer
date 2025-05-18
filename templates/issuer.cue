@@ -21,7 +21,6 @@ import (
 #LetsEncrypt: #Issuer & {
 	#config: #Config
 	#Meta: #config.metadata
-	#privKeyName: string
 	spec: {
 		acme: {
 			if #config.production {
@@ -31,7 +30,7 @@ import (
 				server: "https://acme-staging-v02.api.letsencrypt.org/directory"
 			}
 			privateKeySecretRef: {
-				name: #privKeyName
+				name: #Meta.name
 			}
 		}
 	}

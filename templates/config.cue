@@ -45,10 +45,8 @@ import (
 	config: #Config
 
 	objects: {
-		secret: #Secret & {#config: config}
 		issuer: #LetsEncrypt & {
 			#config: config
-			#privKeyName: secret.metadata.name
 		}
 	}
 }
