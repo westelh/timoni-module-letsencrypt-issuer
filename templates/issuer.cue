@@ -5,7 +5,6 @@ import (
 	timoniv1 "timoni.sh/core/v1alpha1"
 )
 
-
 #Issuer: issuerv1.#Issuer & {
 	#Meta: timoniv1.#Metadata
 	metadata: {
@@ -32,6 +31,7 @@ import (
 			privateKeySecretRef: {
 				name: #Meta.name
 			}
+			solvers: [{ http01: ingress: {} }]
 		}
 	}
 }
