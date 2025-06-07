@@ -38,6 +38,8 @@ import (
 	email: string
 
 	production: *false | bool
+
+	solvers: *[{ http01: ingress: {} }] | [_]
 }
 
 // Instance takes the config values and outputs the Kubernetes objects.

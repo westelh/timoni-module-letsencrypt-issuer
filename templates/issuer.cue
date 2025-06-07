@@ -31,7 +31,7 @@ import (
 			privateKeySecretRef: {
 				name: #Meta.name
 			}
-			solvers: [{ http01: ingress: {} }]
+			solvers: #config.solvers
 		}
 	}
 }
