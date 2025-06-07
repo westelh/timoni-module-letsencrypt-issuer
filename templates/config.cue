@@ -39,7 +39,7 @@ import (
 
 	production: *false | bool
 
-	solvers: *[{ http01: ingress: {} }] | [_]
+	solvers: *[close({ http01: ingress: {} })] | [_]
 }
 
 // Instance takes the config values and outputs the Kubernetes objects.
