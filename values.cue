@@ -6,5 +6,4 @@
 package main
 
 // Defaults
-values: {
-}
+values: {}

@@ -40,6 +40,8 @@ import (
 	production: *false | bool
 
 	solvers: *[close({ http01: ingress: {} })] | [_]
+
+	clusterIssuer: *false | bool
 }
 
 // Instance takes the config values and outputs the Kubernetes objects.
@@ -47,8 +49,15 @@ import (
 	config: #Config
 
 	objects: {
-		issuer: #LetsEncrypt & {
-			#config: config
+		if !config.clusterIssuer {
+			issuer: #LetsEncrypt & {
+				#config: config
+			}
+		}
+		if config.clusterIssuer {
+			clusterissuer: #ClusterLetsEncrypt & {
+				#config: config
+			}
 		}
 	}
 }
